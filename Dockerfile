@@ -26,8 +26,7 @@ RUN docker-php-ext-configure gd \
 
 RUN docker-php-ext-configure imap \
 		--with-kerberos \
-		--with-imap-ssl \
-		--enable-imap
+		--with-imap-ssl
     
 RUN docker-php-ext-install \
     bz2 \
