@@ -1,5 +1,6 @@
 FROM php:7.2-cli
-RUN apt-get install -y \
+RUN apt-get update && \
+    apt-get install -y \
     libbz2-dev \
     libfreetype6-dev \
     libjpeg62-turbo-dev \
