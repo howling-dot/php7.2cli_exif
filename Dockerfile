@@ -11,7 +11,10 @@ RUN apt-get install -y \
     libmemcached-dev \
     libicu-dev \
     libc-client-dev \
-    libkrb5-dev
+    libkrb5-dev \
+    libgmp-dev
+    
+RUN ln -s /usr/include/x86_64-linux-gnu/gmp.h /usr/include/gmp.h
 
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/*
