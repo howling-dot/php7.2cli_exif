@@ -1,6 +1,6 @@
 FROM php:7.2-cli
-RUN apt-get update && \
-    apt-get install -y \
+RUN apt-get update
+RUN apt-get install -y \
     libbz2-dev \
     libfreetype6-dev \
     libjpeg62-turbo-dev \
@@ -11,11 +11,10 @@ RUN apt-get update && \
     libmemcached-dev \
     libicu-dev \
     libc-client-dev \
-    libkrb5-dev \
-    && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+    libkrb5-dev
 
+RUN apt-get clean
+RUN rm -rf /var/lib/apt/lists/*
 
 RUN docker-php-ext-configure exif \
             --enable-exif
