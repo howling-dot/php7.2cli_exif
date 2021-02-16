@@ -30,7 +30,6 @@ RUN docker-php-ext-configure imap \
     
 RUN docker-php-ext-install \
     bz2 \
-    enchant \
     exif \
     fileinfo \
     ftp \
