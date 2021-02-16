@@ -12,7 +12,8 @@ RUN apt-get install -y \
     libicu-dev \
     libc-client-dev \
     libkrb5-dev \
-    libgmp-dev
+    libgmp-dev \
+    firebird-dev
     
 RUN ln -s /usr/include/x86_64-linux-gnu/gmp.h /usr/include/gmp.h
 
