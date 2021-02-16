@@ -45,7 +45,6 @@ RUN docker-php-ext-install \
     intl \
     mbstring \
     mysqli \
-    oci8 \
     odbc \
     opcache \
     pdo_firebird \
