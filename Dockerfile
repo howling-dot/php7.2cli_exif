@@ -43,7 +43,6 @@ RUN docker-php-ext-install \
     imap \
     interbase \
     intl \
-    ldap \
     mbstring \
     mysqli \
     oci8 \
