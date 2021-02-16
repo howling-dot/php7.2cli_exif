@@ -8,24 +8,62 @@ RUN apt-get install -y \
     libvpx-dev \
     libmcrypt-dev \
     libmemcached-dev \
+    libicu-dev \
+    libc-client-dev \
+    libkrb5-dev \
     && \
 apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
     
 docker-php-ext-configure exif \
             --enable-exif
+            && \
             
 docker-php-ext-configure gd \
-        --with-freetype-dir=/usr/lib/x86_64-linux-gnu/ \
-        --with-jpeg-dir=/usr/lib/x86_64-linux-gnu/ \
-        --with-xpm-dir=/usr/lib/x86_64-linux-gnu/ \
-        --with-vpx-dir=/usr/lib/x86_64-linux-gnu/ \
+        --with-freetype-dir=/usr/include/ \
+        --with-jpeg-dir=/usr/include/ \
+        --with-xpm-dir=/usr/include/ \
+        --with-vpx-dir=/usr/include/ \
     && \
+docker-php-ext-configure imap \
+		--with-kerberos \
+		--with-imap-ssl \
+        &&\
     
 docker-php-ext-install \
-    exif \
+    bz2 \
+    curl \    
+    enchant \    
+    exif \    
+    fileinfo \
+    ftp \
     gd \
-    && \   
+    gettext \
+    gmp \
+    imap \
+    interbase \
+    intl \
+    ldap \
+    mbstring \
+    mysqli \
+    oci8 \
+    odbc \
+    opcache \
+    pdo_firebird \
+    pdo_mysql \
+    pdo_oci \
+    pdo_odbc \
+    pdo_pgsql \
+    pdo_sqlite \
+    pgsql \
+    shmop \
+    snmp \
+    soap \
+    sockets \
+    sysvshm \
+    tidy \
+    xmlrpc \
+    xsl  
     
 COPY start.sh /bin/start.sh
 RUN chmod +x /bin/start.sh
