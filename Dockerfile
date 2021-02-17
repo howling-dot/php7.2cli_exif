@@ -13,7 +13,6 @@ RUN apt-get install -y \
     libc-client-dev \
     libkrb5-dev \
     libgmp-dev \
-    libxml2 \
     firebird-dev
     
 RUN ln -s /usr/include/x86_64-linux-gnu/gmp.h /usr/include/gmp.h
@@ -49,10 +48,8 @@ RUN docker-php-ext-install \
     opcache \
     pdo_mysql \
     shmop \
-    soap \
     sockets \
-    sysvshm \
-    xmlrpc
+    sysvshm 
 
     
 COPY start.sh /bin/start.sh
