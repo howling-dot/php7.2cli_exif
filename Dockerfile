@@ -52,6 +52,9 @@ RUN docker-php-ext-install \
     sysvshm 
     
 ENV TZ = "Europe/Kiev"
+RUN mv /usr/local/etc/php/php.ini-development /usr/local/etc/php/php.ini
+# set default timezone
+RUN sed -ri -e 's!;date.timezone =!date.timezone = "Europe/Kiev"!g' /usr/local/etc/php/php.ini
     
 COPY start.sh /bin/start.sh
 RUN chmod +x /bin/start.sh
