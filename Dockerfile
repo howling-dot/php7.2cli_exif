@@ -50,7 +50,10 @@ RUN docker-php-ext-install \
     shmop \
     sockets \
     sysvshm 
-
+    
+RUN echo "date.timezone = Europe/Kiev" > /usr/local/etc/php/php.ini-production
+RUN echo "date.timezone = Europe/Kiev" > /usr/local/etc/php/php.ini-development
+ENV TZ = Europe/Kiev
     
 COPY start.sh /bin/start.sh
 RUN chmod +x /bin/start.sh
